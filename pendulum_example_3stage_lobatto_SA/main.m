@@ -16,7 +16,7 @@ plots=false;
 init 
 
 % Set ratio between step sizes
-r=1;
+r=1/2;
 
 % put everything in a cell array called params
 params = {ny, nz, nu, yn, zn, g0, l, A, Ahat, b, c, U10_trivial, U20_trivial, U30_trivial, tol, r};
@@ -26,6 +26,7 @@ H = logspace(-3.25,-2,H_len);
 H = flip(H);
 
 for i=1:H_len
+	fprintf('\ni=%i',i)
 	h = H(i);
 
 	result = find_error_SA(h,params);

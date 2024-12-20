@@ -16,14 +16,14 @@ plots = false;
 init 
 
 % Set ratio between step sizes
-r=1/2;
+r=1;
 
 % put everything in a cell array called params
 params = {ny, nz, nu, yn, zn, g0, l, A, Ahat, b, c, U10, U20, tol, r};
 
 H_len = 8;
 %H = linspace(7.5e-4,0.1,H_len);
-H = logspace(-3,-1,H_len);
+H = logspace(-3.5,-1.5,H_len);
 H = flip(H);
 
 for i=1:H_len

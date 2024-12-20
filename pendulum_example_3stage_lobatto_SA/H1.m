@@ -67,7 +67,7 @@ G = [dot(Y2,Y2)-l^2; dot(Y3,Y3)-l^2];
 % calculate the components of H(x) with the above parameters
 v1 = Ybar - kron(ones2,yn) - h*kron(A0,eye(ny))*F;
 v2 = Z - kron(ones3,zn) - h*kron(A0hat,eye(nz))*Ktilde;
-v3 = G;
+v3 = (1/h^2) * G; % multiply by 1/h^2 so the Jacobian remains invertible
 
 v = [v1; v2; v3];
 

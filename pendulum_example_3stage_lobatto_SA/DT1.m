@@ -53,7 +53,7 @@ ynp = Y3;
 % calculate the Jacobian as a 2x2 block matrix
 J11 = eye(nz);
 J12 = h*b(3)*Y3;
-J21 = 2*ynp';
+J21 = (1/h)*2*ynp';
 J22 = 0;
 
 J = [J11 J12; J21 J22];

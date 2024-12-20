@@ -50,7 +50,7 @@ ynp = Y2;
 
 % calculate G(x) with above parameters
 v1 = znp - zn - h*(-b(1)*U1*Y1 - b(2)*U2*Y2 - alpha0);
-v2 = 2*dot(ynp,znp);
+v2 = (1/h)*2*dot(ynp,znp); % multipy by 1/h so Jacobian is invertible 
 
 v = [v1; v2];
 

@@ -52,7 +52,7 @@ J32 = zeros(2,2);
 J33 = eye(2);
 J34 = -h*Ahat(2,1)*(-Y1);
 
-J41 = 2*Y2';
+J41 = (1/h^2)*2*Y2'; % multiply by 1/h^2 so Jacobian is invertible
 J42 = zeros(1,2);
 J43 = zeros(1,2);
 J44 = 0;

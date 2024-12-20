@@ -92,6 +92,7 @@ for n=1:2
 	end
 
 %%	%% solve the first nonlinear system
+	fprintf('\nSolving system 1...')
 	% The function H needs to be redefined at every step using Fparams.
 	% The argument of H is x = [Ybar; Z; Utilde], where
 	% Ybar = [Ynp2; Ynp3], Z = [Znp1; Znp2; Znp3], Utilde = [Unp1; Unp2].
@@ -110,8 +111,8 @@ for n=1:2
 
 	H = @(x) H1(x,Hparams);
 	DH = @(x) DH1(x,Hparams);
-	%[H_root H_iter] = simplified_newton(H,DH(x0H),x0H,tol);
-	[H_root H_iter] = newton(H,DH,x0H,tol);
+	[H_root H_iter] = simplified_newton(H,DH(x0H),x0H,tol);
+	%[H_root H_iter] = newton(H,DH,x0H,tol);
 
 	% unpack H_root
 	Ybar = H_root(1:2*ny);
@@ -128,10 +129,11 @@ for n=1:2
 	Z3 = Z(2*nz+1:3*nz);
 
 	% unpack Utilde
-	U1 = Utilde(1:nu);
-	U2 = Utilde(nu+1:2*nu);
+	U1 = Utilde(1:nu)
+	U2 = Utilde(nu+1:2*nu)
 
 %%	%% solve the second nonlinear system
+	fprintf('\nSolving system 2...')
 	% The function T needs to be redefined at every step using Tparams.
 
 	% Note that Tparams is Tparams with three new parameters.  This
@@ -144,12 +146,12 @@ for n=1:2
 	Tparams = [Hparams {b, Ybar, Utilde}];
 	T = @(x) T1(x,Tparams);
 	DT = @(x) DT1(x,Tparams);
-	%[T_root T_iter] = simplified_newton(T,DT(x0T),x0T,tol);
-	[T_root T_iter] = newton(T,DT,x0T,tol);
+	[T_root T_iter] = simplified_newton(T,DT(x0T),x0T,tol);
+	%[T_root T_iter] = newton(T,DT,x0T,tol);
 
 	% unpack T_root 
 	znp = T_root(1:nz);
-	U3 = T_root(nz+1:nz+nu);
+	U3 = T_root(nz+1:nz+nu)
 
 	% Update y
 	ynp = Y3;

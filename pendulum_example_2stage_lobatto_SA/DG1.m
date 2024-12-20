@@ -51,7 +51,7 @@ ynp = Y2;
 % calculate the Jacobian as a 2x2 block matrix
 J11 = eye(2);
 J12 = -h*b(2)*(-Y2);
-J21 = 2*ynp';
+J21 = (1/h)*2*ynp'; % multipy by 1/h so that the Jacobian is invertible
 J22 = 0;
 
 J = [J11 J12; J21 J22];

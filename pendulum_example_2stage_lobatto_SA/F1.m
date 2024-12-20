@@ -50,7 +50,7 @@ Y1 = yn;
 v1 = Y2 - yn - h*(A(2,1)*Z1 + A(2,2)*Z2);
 v2 = Z1 - zn - h*Ahat(1,1)*(-U1*Y1 - alpha0);
 v3 = Z2 - zn - h*Ahat(2,1)*(-U1*Y1 - alpha0);
-v4 = dot(Y2,Y2) - l^2;
+v4 = (1/h^2) * (dot(Y2,Y2) - l^2); % multiply by 1/h^2 so Jacobian is invertible
 
 v = [v1; v2; v3; v4];
 

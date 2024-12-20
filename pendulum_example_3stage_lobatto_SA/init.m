@@ -3,7 +3,7 @@
 
 g0 = 9.8; % Graviational constant.
 l = 1; % length of rod
-tol = 1e-15; % for Newton's method
+tol = 2e-10; % for Newton's method
 
 y0 = [3/5; -4/5]; % initial position
 z0 = [-4/2; -3/2]; % initial velocity 
@@ -13,9 +13,10 @@ nz = 2; % dimensions of z
 nu = 1; % dimensions of u
 
 % Used in initial guesses for Newton's method
-U10_trivial = 0;
-U20_trivial = 0;
-U30_trivial = 0;
+% in the first step.
+U10_trivial = 14;
+U20_trivial = 14;
+U30_trivial = 14;
 
 % PRK coefficients of Lobatto IIIA-IIIB with s=3
 

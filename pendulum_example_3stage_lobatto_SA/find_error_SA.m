@@ -41,9 +41,9 @@ A = params{8};
 Ahat = params{9};
 b = params{10};
 c = params{11};
-U10 = params{12};
-U20 = params{13};
-U30 = params{14};
+U10_trivial = params{12};
+U20_trivial = params{13};
+U30_trivial = params{14};
 tol = params{15};
 r = params{16};
 
@@ -58,8 +58,8 @@ E = (1/2)*norm(zn)^2 + g0*(l+yn(2));
 for n=1:2
 	% initial guesses for the simplified Newton method.
 	if n==1
-		x0H = [yn; yn; zn; zn; zn; U10; U20];
-		x0T = [zn; U30];
+		x0H = [yn; yn; zn; zn; zn; U10_trivial; U20_trivial];
+		x0T = [zn; U30_trivial];
 	else
 		Yn1 = ynm;
 		Yn2 = Y2;

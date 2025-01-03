@@ -92,7 +92,6 @@ for n=1:2
 	end
 
 %%	%% solve the first nonlinear system
-	fprintf('\nSolving system 1...')
 	% The function H needs to be redefined at every step using Fparams.
 	% The argument of H is x = [Ybar; Z; Utilde], where
 	% Ybar = [Ynp2; Ynp3], Z = [Znp1; Znp2; Znp3], Utilde = [Unp1; Unp2].
@@ -133,7 +132,6 @@ for n=1:2
 	U2 = Utilde(nu+1:2*nu)
 
 %%	%% solve the second nonlinear system
-	fprintf('\nSolving system 2...')
 	% The function T needs to be redefined at every step using Tparams.
 
 	% Note that Tparams is Tparams with three new parameters.  This

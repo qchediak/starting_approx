@@ -1,6 +1,6 @@
 # Code for PhD thesis.
 
-These are the m-files associated with my thesis, tentatively title _Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations_.  The folders are organized as follows:
+These are the m-files associated with my thesis, tentatively titled _Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations_.  The folders are organized as follows:
 
 `pendulum_2stage_lobatto`: Solve the plane pendulum as a DAE using 2-stage Lobatto IIIA-IIIB.  Uses trivial starting approximations.
 

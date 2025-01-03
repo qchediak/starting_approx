@@ -1,4 +1,4 @@
-# Code for PhD thesis.
+# Code for PhD thesis
 
 These are the m-files associated with my thesis, tentatively titled _Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations_.  The folders are organized as follows:
 

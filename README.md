@@ -14,5 +14,9 @@ These are the m-files associated with my thesis, tentatively titled _Starting Ap
 
 - `pendulum_ODE_SA`: Uses good starting approximations to solve the plane pendulum as an ODE over two steps and plots the errors of the starting approximations vs. stepsize.
 
+- `two_body_ode`: Solves the two-body problem using trivial starting approximations.
+
+- `two_body_ode_SA`: Uses good starting approximations to solve the two-body problem over two steps and plots the errors of the starting approximations vs. stepsize.
+
 Each folder is self-contained (i.e., code in one directory does not reference a file in another directory).  To run any of the experiments, navigate within a folder and run `main` in MATLAB.  To change parameters, look in the `init` or `main` files.  This was run in MATLAB R2024b; earlier versions may have formatting issues in the plots.
 

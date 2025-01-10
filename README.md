@@ -1,6 +1,6 @@
 # Code for PhD thesis
 
-These are the m-files associated with my thesis, tentatively titled _Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations_.  These are meant to illustrate the analytical results; they have not been written to be as general as possible.
+These are the m-files associated with my thesis, tentatively titled _Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations_.  These are meant to illustrate the analytical results by particular examples; they have not been written to be as general as possible.
 
 Each folder is self-contained (i.e., code in one directory does not reference code in another directory).  To run any of the experiments, navigate within a folder and run `main` in MATLAB.  To change parameters, look in the `init` or `main` files.  This was run in MATLAB R2024b; earlier versions may have formatting issues in the plots.
 

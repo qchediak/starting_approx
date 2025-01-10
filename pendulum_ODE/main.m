@@ -5,7 +5,7 @@ clear; close all
 
 init
 
-h = 0.1;
+h = 0.2;
 N = 50;
 
 % parameters for G and DG

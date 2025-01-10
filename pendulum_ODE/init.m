@@ -9,18 +9,18 @@
 %c = [0; 1];
 
 %% Lobatto IIIB
-method_str = 'Lobatto IIIB';
-A = [1/2 0; 
-	1/2 0];
-b = [1/2; 1/2];
-c = [0; 1];
+%method_str = 'Lobatto IIIB';
+%A = [1/2 0; 
+%	1/2 0];
+%b = [1/2; 1/2];
+%c = [0; 1];
 
 %% Gauss
-%method_str = 'Gauss Method';
-%A = [1/4 1/4-sqrt(3)/6;
-%	1/4+sqrt(3)/6 1/4];
-%b = [1/2; 1/2];
-%c = [1/2-sqrt(3)/6; 1/2+sqrt(3)/6];
+method_str = 'Gauss Method';
+A = [1/4 1/4-sqrt(3)/6;
+	1/4+sqrt(3)/6 1/4];
+b = [1/2; 1/2];
+c = [1/2-sqrt(3)/6; 1/2+sqrt(3)/6];
 
 s = size(A,1); % number of stages
 

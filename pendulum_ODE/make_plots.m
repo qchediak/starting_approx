@@ -22,7 +22,7 @@ function make_plots(psins, plots_params)
 
 	% Plot the position coordinates
 	figure
-	plot(psins(1,:),psins(2,:), 'bo', 'LineWidth', 1.5)
+	plot(psins(1,:),psins(2,:), 'bo-', 'LineWidth', 1.5)
 	hold on
 	plot(cos(t),sin(t), 'k-', 'LineWidth', 1.5)
 	xlabel('$y_1$', 'Interpreter', 'latex', 'FontSize', 16)
@@ -35,6 +35,34 @@ function make_plots(psins, plots_params)
 	axis square
 	grid on
 	legend('Numerical Solution', 'The Manifold $g(y)=0$', 'Interpreter', 'latex', 'FontSize', 22, 'Location', 'NorthEast')
+	hold off
+
+	% plot 2*y^T*z vs time
+	for i=1:length(psins)
+		if i==1
+			values = 2*dot(psins(1:2,i), psins(3:4,i));
+		else
+			values = [values 2*dot(psins(1:2,i), psins(3:4,i))];
+		end
+	end
+
+	hidden_manifold_str_part = 'Adherence of the Solution to $(g_y f)(y,z)=0$';
+
+	hidden_manifold_str = sprintf('%s\n%s', hidden_manifold_str_part, values_str);
+
+	figure
+	plot(0:h:N*h, values, 'b-', 'LineWidth', 1.5)
+	hold on
+	plot(0:h:N*h, zeros(1,N+1), 'r-', 'LineWidth', 1.5)
+	xlabel('$t$', 'Interpreter', 'latex', 'FontSize', 16)
+	ylabel('$2y(t)^Tz(t)$', 'Interpreter', 'latex', 'FontSize', 16)
+	set(get(gca,'YLabel'),'Rotation',0)
+	set(gca,'FontSize',16)
+	title(hidden_manifold_str,'Interpreter','latex','FontSize',24)
+	ylim([-0.2 0.2])
+	axis square
+	grid on
+	legend('Numerical Solution', 'True Solution', 'Interpreter', 'latex', 'FontSize', 22, 'Location', 'NorthEast')
 	hold off
 
 	if plot_ys

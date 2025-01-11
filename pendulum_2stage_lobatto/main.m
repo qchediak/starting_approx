@@ -86,14 +86,12 @@ end
 
 %% Plots
 if plots 
-	plots_params = {h,N};
+	plots_params = {h,N,s};
 	make_plots(yns,zns,E,plots_params)
 end
 
 if movie
 	make_movie(yns,zns,plots_params)
 end
-
-
 
 

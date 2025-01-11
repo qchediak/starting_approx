@@ -43,3 +43,5 @@ Ahat = [a11hat a12hat; a21hat a22hat];
 b = [b1; b2]; 
 c = [c1; c2];
 
+s = size(A,1);
+

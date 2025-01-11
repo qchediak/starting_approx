@@ -48,9 +48,9 @@ method_str_edit = lower(method_str);
 method_str_edit = strrep(method_str_edit, ' ', '');
 
 if strcmp(method_str_edit, lower('lobattoIIIA')) && s==2
-	line1 = '$\log_{10} \| Y_{n+1,2}^{(0)} - Y_{n+1,2} \|$ vs.~$\log_{10} h$';
+	line1 = '$\log_{10} \| \Psi_{n+1,2}^{(0)} - \Psi_{n+1,2} \|$ vs.~$\log_{10} h$';
 else
-	line1 = '$\log_{10} \| Y_{n+1}^{(0)} - Y_{n+1} \|$ vs.~$\log_{10} h$';
+	line1 = '$\log_{10} \| \Psi_{n+1}^{(0)} - \Psi_{n+1} \|$ vs.~$\log_{10} h$';
 end
 
 line2 =  sprintf('%s, $s=%i$, $r=%.1f$', method_str, s, r);

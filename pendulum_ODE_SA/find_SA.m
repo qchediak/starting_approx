@@ -52,6 +52,13 @@ function Xnp0 = find_SA(xnm, Xn, SA_params)
 		beta_star22 = (1/12)*r*(2*sqrt(3)+(3+2*sqrt(3))*r);
 		beta_star = [beta_star11 beta_star12; beta_star21 beta_star22];
 		E = [0 1; 1 0];
+	elseif strcmp(method, lower('RadauIIA')) && s==2
+		beta_star11 = (1/12) * (-r) * (r+4);
+		beta_star12 = (1/12) * r^2;
+		beta_star21 = (1/12) * (-3*r) * (3*r+4);
+		beta_star22 = (1/12) * 9 * r^2;
+		beta_star = [beta_star11 beta_star12; beta_star21 beta_star22];
+		E = [0 1; 1 0];
 	else
 		error('Error (find_SA): Invalid method and s value combination')
 	end

@@ -1,6 +1,8 @@
 % init.m
 % initial conditions and parameters for pendulum ODE example
 
+% Uncomment the desired method
+
 %% Lobatto IIIA
 %method_str = 'Lobatto IIIA';
 %A = [0 0; 
@@ -16,11 +18,18 @@
 %c = [0; 1];
 
 %% Gauss
-method_str = 'Gauss Method';
-A = [1/4 1/4-sqrt(3)/6;
-	1/4+sqrt(3)/6 1/4];
-b = [1/2; 1/2];
-c = [1/2-sqrt(3)/6; 1/2+sqrt(3)/6];
+%method_str = 'Gauss Method';
+%A = [1/4 1/4-sqrt(3)/6;
+%	1/4+sqrt(3)/6 1/4];
+%b = [1/2; 1/2];
+%c = [1/2-sqrt(3)/6; 1/2+sqrt(3)/6];
+
+%% Radau IIA
+method_str = 'Radau IIA';
+A = [5/12 -1/12;
+	3/4 1/4];
+b = [3/4; 1/4];
+c = [1/3; 1];
 
 s = size(A,1); % number of stages
 

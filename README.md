@@ -22,4 +22,7 @@ The folders are organized as follows:
 
 - `two_body_ode_SA`: Uses good starting approximations to solve the two-body problem over two steps and plots the errors of the starting approximations vs. stepsize.
 
+- `pendulum_PRK`: Solves the plane pendulum as a DAE using PRK methods implemented in the standard way.  Uses trivial starting approximations.
+
+- `pendulum_PRK_SA`: Uses good starting approximations to solve the plane pendulum as a DAE over two steps using PRK methods implemented in the standard way.  Also plots the errors of the starting approximations vs. stepsize.
 

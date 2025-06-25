@@ -20,20 +20,20 @@ u0 = (1/l^2) * (dot(z0,z0) - dot(y0,alpha0)); % satisfies hidden constraint.
 % Note that b is a column vector
 
 %% Gauss
-%method_str = 'Gauss';
-%A = [1/4 1/4-sqrt(3)/6;
-%	1/4+sqrt(3)/6 1/4];
-%b = [1/2; 1/2];
-%c = [1/2-sqrt(3)/6; 1/2+sqrt(3)/6];
-%Ahat = A;
+method_str = 'Gauss';
+A = [1/4 1/4-sqrt(3)/6;
+	1/4+sqrt(3)/6 1/4];
+b = [1/2; 1/2];
+c = [1/2-sqrt(3)/6; 1/2+sqrt(3)/6];
+Ahat = A;
 
 %% Radau IIA
-method_str = 'Radau IIA';
-A = [5/12 -1/12;
-	3/4 1/4];
-b = [3/4; 1/4];
-c = [1/3; 1];
-Ahat = A;
+%method_str = 'Radau IIA';
+%A = [5/12 -1/12;
+%	3/4 1/4];
+%b = [3/4; 1/4];
+%c = [1/3; 1];
+%Ahat = A;
 
 s = size(A,1); % number of stages
 

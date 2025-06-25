@@ -9,7 +9,7 @@ function make_plots(yns,zns,energy_vec,plots_params)
 
 	E = energy_vec;
 
-	line2 = sprintf(', $s=%i$, $h=%0.1f$, $N=%i$', s, h, N);
+	line2 = sprintf(', $s=%i$, $h=%0.3f$, $N=%i$', s, h, N);
 
 	% Plot the position coordinates
 	titlestr0 = 'Position Coordinates $(y_1,y_2)$ of the Pendulum';

@@ -1,9 +1,9 @@
 function v = F1(x,Fparams)
 % function v = F1(x,Fparams)
 %
-% LHS of first linear system to solve for index 3 pendulum example.
+% LHS of first nonlinear system to solve for index 3 pendulum example.
 %
-% Note that the linear system changes with each step, because (yn,zn) are
+% Note that the nonlinear system changes with each step, because (yn,zn) are
 % 	updated.  This is why we need to pass Fparams.
 %
 % Here Fparams = {ny, nz, nu, h, yn, zn, g0, l, A, Ahat}, 

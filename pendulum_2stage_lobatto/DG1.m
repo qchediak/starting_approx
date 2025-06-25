@@ -2,8 +2,8 @@ function J = DG1(x,Gparams)
 % function J = DG1(x,Gparams)
 % Jacobian of the function G1.
 %
-% Note that the linear system changes with each step, because (yn,zn) are
-% 	updated.  This is why we need to pass Rparams.
+% Note that the nonlinear system changes with each step, because (yn,zn) are
+% 	updated.  This is why we need to pass Gparams.
 %
 % Here Gparams = {ny, nz, nu, h, yn, zn, g0, l, A, Ahat, b, Y2, U1}
 % where h is stepsize; ny,nz,nu are respectively the dimensions of

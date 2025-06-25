@@ -1,8 +1,8 @@
 function v = G1(x,Gparams)
 % function v = G1(x,Gparams)
-% LHS of second linear system to solve for index 3 pendulum example.
+% LHS of second nonlinear system to solve for index 3 pendulum example.
 %
-% Note that the linear system changes with each step, because (yn,zn) are
+% Note that the nonlinear system changes with each step, because (yn,zn) are
 % 	updated.  This is why we need to pass Gparams.
 %
 % Here Gparams = {ny, nz, nu, h, yn, zn, g0, l, A, Ahat, b, Y2}

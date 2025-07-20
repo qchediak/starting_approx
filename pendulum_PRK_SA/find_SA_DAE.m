@@ -65,6 +65,9 @@ function [Ynp0 Znp0 Unp0] = find_SA_DAE(ynm, znm, Yn, Zn, Un, SA_params)
 		E = [0 0 1; 0 1 0; 1 0 0];
 		beta = kron(ones(s,1), b') - beta_star*E;
 
+		% for this method, we could choose beta_hat = beta
+		%beta_hat = beta;
+
 		beta_hat_star11 = -(sqrt(15)/3)*r*c(1) - (sqrt(15)/3)*r^2*c(1)^2;
 		beta_hat_star12 = (-1 + sqrt(15)/3)*r*c(1) + (sqrt(15)/3)*r^2*c(1)^2;
 		beta_hat_star13 = 0;

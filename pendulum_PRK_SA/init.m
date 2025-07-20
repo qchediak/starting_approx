@@ -4,7 +4,7 @@
 g0 = 9.8; % Graviational constant.
 alpha0 = [0;g0];
 l = 1; % length of rod
-tol = 1e-6; % for the iterative solver (e.g. Newton's method)
+tol = 1e-12; % for the iterative solver (e.g. Newton's method)
 
 y0 = [3/5; -4/5]; % initial position
 z0 = [-4/2; -3/2]; % initial velocity 
@@ -50,4 +50,12 @@ s = size(A,1); % number of stages
 f = @(y,z) z;
 k = @(y,z,u) -u*y - alpha0;
 g = @(y) dot(y,y) - l^2;
+
+% Options for plotting errors: 
+% Either 'composite' (i.e. error in all of X_{n+1}^{(0)})
+% or 'component' (i.e. error in each X_{n+1,i}^{(0)} for i=1,...s).
+% Currently the 'component' option is only available for s=3.
+error_plotting_Y = 'composite';
+error_plotting_Z = 'composite';
+error_plotting_U = 'composite';
 

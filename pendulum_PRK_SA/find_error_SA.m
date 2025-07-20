@@ -21,10 +21,10 @@ function result = find_error_SA(h, params)
 	%	f, k, g: The DAE is y'=f(y,z), z'=k(y,z,u), 0=g(y)
 	%
 	% Outputs: Returns the cell array 
-	% 	result = {Y0_err, Z0_err, U0_err, yns, zns, energy_vec}
-	%	Ynp0_err: Error in the initializer Y_{n+1}^{(0)}
-	%	Znp0_err: Error in the initializer Z_{n+1}^{(0)}
-	%	Unp0_err: Error in the initializer U_{n+1}^{(0)}
+	% 	result = {Y0_err_vec, Z0_err_vec, U0_err_vec, yns, zns, energy_vec}
+	%	Ynp0_err_vec: Vector of errors in the initializer Y_{n+1}^{(0)}
+	%	Znp0_err_vec: Vector of errors in the initializer Z_{n+1}^{(0)}
+	%	Unp0_err_vec: Vector of errors in the initializer U_{n+1}^{(0)}
 	%	yns: The steps [y_{n-1}, y_n, y_{n+1}]
 	%	zns: The steps [z_{n-1}, z_n, z_{n+1}]
 	%	energy_vec: vector of energy values.
@@ -78,9 +78,9 @@ function result = find_error_SA(h, params)
 
 	%% find the error
 
-	Ynp0_err = norm(Ynp0 - Ynp);
-	Znp0_err = norm(Znp0 - Znp);
-	Unp0_err = norm(Unp0 - Unp);
+	Ynp0_err_vec = abs(Ynp0 - Ynp);
+	Znp0_err_vec = abs(Znp0 - Znp);
+	Unp0_err_vec = abs(Unp0 - Unp);
 
 	yns = [ynm yn ynp];
 	zns = [znm zn znp];
@@ -94,6 +94,6 @@ function result = find_error_SA(h, params)
 		energy_vec = [energy_vec Enp];
 	end
 
-	result = {Ynp0_err, Znp0_err, Unp0_err, yns, zns, energy_vec};
+	result = {Ynp0_err_vec, Znp0_err_vec, Unp0_err_vec, yns, zns, energy_vec};
 end
 

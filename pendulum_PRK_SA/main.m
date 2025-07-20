@@ -6,7 +6,7 @@ clear; close all
 
 init
 
-r = 1/2;
+r = 1;
 
 ynm = y0;
 znm = z0;
@@ -17,8 +17,8 @@ x0_trivial = [kron(ones(s,1),ynm); kron(ones(s,1),znm); kron(ones(s,1),unm)];
 % parameters for find_error_SA
 params = {ny, nz, nu, g0, l, b, c, A, Ahat, ynm, znm, unm, x0_trivial, tol, r, method_str, f, k, g};
 
-stepsizes_len = 10;
-stepsizes = logspace(-3,-1,stepsizes_len);
+stepsizes_len = 8;
+stepsizes = logspace(-2.25,-1.5,stepsizes_len);
 stepsizes = flip(stepsizes);
 
 for i=1:stepsizes_len

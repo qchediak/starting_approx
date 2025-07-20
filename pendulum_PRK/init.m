@@ -21,15 +21,16 @@ u0 = dot(z0,z0) - dot(y0,alpha0); % satisfies hidden constraint.
 % PRK coefficients: Uncomment the desired method
 % Note that b is a column vector
 
-%% Gauss
+%% 3-stage Gauss
 method_str = 'Gauss Method';
-A = [1/4 1/4-sqrt(3)/6;
-	1/4+sqrt(3)/6 1/4];
-b = [1/2; 1/2];
-c = [1/2-sqrt(3)/6; 1/2+sqrt(3)/6];
+A=[5/36, 2/9-sqrt(15)/15, 5/36-sqrt(15)/30;
+	5/36+sqrt(15)/24, 2/9, 5/36-sqrt(15)/24;
+	5/36+sqrt(15)/30, 2/9+sqrt(15)/15, 5/36];
+b = [5/18; 4/9; 5/18];
+c = [1/2-sqrt(15)/10; 1/2; 1/2+sqrt(15)/10];
 Ahat = A;
 
-%% Radau IIA
+%% 2-stage Radau IIA
 %method_str = 'Radau IIA';
 %A = [5/12 -1/12;
 %	3/4 1/4];

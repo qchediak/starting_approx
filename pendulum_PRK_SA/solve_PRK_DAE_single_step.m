@@ -62,11 +62,11 @@ function [ynp znp Ynp Znp Unp iter] = solve_PRK_DAE_single_step(params, h, yn, z
 	if strcmpi(iterative_scheme, 'newton')
 		H = @(x) H1(x,Hparams);
 		DH = @(x) DH1(x,Hparams);
-		[H_root H_iter] = newton(H,DH,x0,tol);
+		[root iter] = newton(H,DH,x0,tol);
 	elseif strcmpi(iterative_scheme, 'simplified newton 1')
 		H = @(x) H1(x,Hparams);
 		DH = @(x) DH1(x,Hparams);
-		[H_root H_iter] = simplified_newton(H,DH(x0),x0,tol);
+		[root iter] = simplified_newton(H,DH(x0),x0,tol);
 	elseif strcmpi(iterative_scheme, 'simplified newton 2')
 		H = @(x) H2(x,Hparams); % alternate formulation of the nonlinear system
 		J = computeJ(un,Hparams); % can be used in simplified Newton
@@ -75,7 +75,7 @@ function [ynp znp Ynp Znp Unp iter] = solve_PRK_DAE_single_step(params, h, yn, z
 		error('Error (solve_IRK_DAE_single_step): Unknown iterative scheme');
 	end
 
-	% unpack H_root
+	% unpack root
 	Ynp = root(1:ny*s);			% for s=2, ny=nz=2, nu=1, this is 1:4
 	Znp = root(ny*s+1:ny*s+nz*s);	% for s=2, ny=nz=2, nu=1, this is 5:8
 	Unp = root(ny*s+nz*s+1:end);	% for s=2, ny=nz=2, nu=1, this is 9:10

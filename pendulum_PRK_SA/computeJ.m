@@ -1,6 +1,6 @@
 function J = computeJ(un,Hparams)
 	% function J = computeJ(un,Hparams)
-	% Finds the matrix J for use in the root finder iterative_dae.
+	% Finds the matrix J for use in the root finder for DAEs.
 	%
 	% Specific to the pendulum problem.
 	%

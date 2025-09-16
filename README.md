@@ -1,4 +1,4 @@
-# Code for PhD thesis
+# Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations
 
 These are the m-files associated with my thesis, tentatively titled _Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations_.  These are meant to illustrate and verify the analytical results of the thesis.  These scripts are not written as general solvers and are not intended for use outside of these particular examples. 
 

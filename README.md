@@ -1,8 +1,8 @@
 # Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations
 
-These are the m-files associated with my thesis, tentatively titled _Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations_.  These are meant to illustrate and verify the analytical results of the thesis.  These scripts are not written as general solvers and are not intended for use outside of these particular examples. 
+These are the Matlab files associated with my thesis, tentatively titled _Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations_.  These are meant to illustrate and verify the analytical results of the thesis.  This code could be modified for other problems; however, these scripts are not written as general solvers and are not ready for operational use. 
 
-Each folder is self-contained (i.e., code in one directory does not reference code in another directory).  To run any of the experiments, navigate within a folder and run `main` in MATLAB.  To change parameters, look in the `init` or `main` files.  This was run in MATLAB R2024b; earlier versions may have formatting issues in the plots.
+Each folder is self-contained (i.e., code in one directory does not reference code in another directory).  To run any of the experiments, navigate within a folder and run `main` in MATLAB.  To change parameters, look in the `init` or `main` files.  The code in this repository was run in MATLAB R2024b; earlier versions may have formatting issues in the plots.
 
 The folders are organized as follows:
 

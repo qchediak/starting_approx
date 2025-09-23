@@ -1,0 +1,18 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Starting Approximations for Runge-Kutta Methods Applied to
+  Ordinary Differential Equations and Differential-Algebraic
+  Equations
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Quentin
+    family-names: Chediak
+    affiliation: The University of Iowa
+repository-code: 'https://github.com/qchediak/starting_approx'
+license: MIT

@@ -63,7 +63,7 @@ K = [k1; k2; k3];
 
 % calculate T(x) with above parameters
 v1 = znp - zn - h*kron(b,eye(nz))'*K;
-v2 = 2*dot(ynp,znp);
+v2 = (1/h)*2*dot(ynp,znp);
 
 v = [v1; v2];
 

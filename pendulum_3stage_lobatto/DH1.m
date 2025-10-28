@@ -72,7 +72,7 @@ J21 = -h*kron(A0hat,eye(nz))*[zeros(ny) zeros(ny); -U2*eye(ny) zeros(ny)];
 J22 = eye(3*nz);
 J23 = -h*kron(A0hat,eye(nz))*[-Y1 zeros(2,1); zeros(2,1) -Y2];
 
-J31 = [2*Y2' zeros(1,2); zeros(1,2) 2*Y3'];
+J31 = (1/h^2)*[2*Y2' zeros(1,2); zeros(1,2) 2*Y3']; % scale by 1/h^2 so the Jacobian remains invertible
 J32 = zeros(2,3*nz);
 J33 = zeros(2,2);
 

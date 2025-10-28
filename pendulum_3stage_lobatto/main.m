@@ -17,7 +17,7 @@ clear; close all
 init 
 
 plots=true;
-movie=true;
+movie=false;
 
 yn = y0;
 zn = z0;

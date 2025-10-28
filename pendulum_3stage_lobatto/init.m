@@ -3,7 +3,7 @@
 
 g0 = 9.8; % Graviational constant.
 l = 1; % length of rod
-h = 0.1; % stepsize
+h = 0.05; % stepsize
 tol = 1e-6; % for Newton's method
 N = 500; % number of steps
 

@@ -1,6 +1,6 @@
 # Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations
 
-These are the Matlab files associated with my PhD thesis, tentatively titled _Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations_.  These are meant to illustrate and verify the analytical results of the thesis.  This code could be modified for other problems; however, these scripts are not written as general solvers. 
+These are the Matlab files associated with my PhD thesis, titled _Starting Approximations for Runge-Kutta Methods Applied to Ordinary Differential Equations and Differential-Algebraic Equations_.  These are meant to illustrate and verify the analytical results of the thesis.  This code could be modified for other problems; however, these scripts are not written as general solvers. 
 
 Each folder is self-contained (i.e., code in one directory does not reference code in another directory).  To run any of the experiments, navigate within a folder and run `main` in MATLAB.  To change parameters, look in the `init` or `main` files.  The code in this repository was run in MATLAB R2024b; earlier versions may have formatting issues in the plots.
 
@@ -25,4 +25,8 @@ The folders are organized as follows:
 - `pendulum_PRK`: Solves the plane pendulum as a DAE using PRK methods implemented in the standard way.  Uses trivial starting approximations.
 
 - `pendulum_PRK_SA`: Uses good starting approximations to solve the plane pendulum as a DAE over two steps using PRK methods implemented in the standard way.  Also plots the errors of the starting approximations vs. stepsize.
+
+- `pendulum_projected_lobattoIIIC`: Solves the plane pendulum using the projected Lobatto IIIC method with trivial starting approximations.
+
+- `pendulum_projected_lobattoIIIC_SA`: Solves the plane pendulum using the projected Lobatto IIIC method with good starting approximations.
 

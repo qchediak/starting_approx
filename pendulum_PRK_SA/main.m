@@ -6,7 +6,7 @@ clear; close all
 
 init
 
-r = 1;
+r = 1/2;
 
 ynm = y0;
 znm = z0;
@@ -18,7 +18,7 @@ x0_trivial = [kron(ones(s,1),ynm); kron(ones(s,1),znm); kron(ones(s,1),unm)];
 params = {ny, nz, nu, g0, l, b, c, A, Ahat, ynm, znm, unm, x0_trivial, tol, r, method_str, f, k, g};
 
 stepsizes_len = 8;
-stepsizes = logspace(-3.5,-2,stepsizes_len);
+stepsizes = logspace(-3.3,-3,stepsizes_len);
 stepsizes = flip(stepsizes);
 
 for i=1:stepsizes_len

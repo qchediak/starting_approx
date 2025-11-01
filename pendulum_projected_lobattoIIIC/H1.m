@@ -1,8 +1,7 @@
-function v = H2(x,Hparams)
-% function v = H2(x,Hparams)
+function v = H1(x,Hparams)
+% function v = H1(x,Hparams)
 %
 % The nonlinear system to solve for index 3 pendulum example.
-% This formulation uses G(ones \otimes y_n + O(h)) rather than G(Y).
 %
 % Note that the linear system changes with each step, because (yn,zn) are
 % 	updated.  This is why we need to pass Hparams.
@@ -51,14 +50,13 @@ U = x(ny*s+nz*s+1:end);		% for s=2, ny=nz=2, nu=1, this is 9:10
 
 alpha0 = [0; g0];
 
-% first argument for computeG
-G_arg = kron(ones(s,1),yn) + h * kron(A,eye(ny))*computeF(Y,Z,f,ny,s);
+ones_vec = ones(s,1);
 
 % calculate H(x) with above parameters
-v1 = Y - kron(ones(s,1), yn) - h * kron(A, eye(ny)) * computeF(Y,Z,f,ny,s);
-v2 = Z - kron(ones(s,1), zn) - h * kron(Ahat, eye(nz)) * computeK(Y,Z,U,k,ny,nu,s);
-v3 = (1/h) * computeG(G_arg,g,ny,s); % scaled constraint
+v1 = Y - kron(ones_vec, yn) - h * kron(A, eye(ny)) * computeF(Y,Z,f,ny,s);
+v2 = Z - kron(ones_vec, zn) - h * kron(Ahat, eye(nz)) * computeK(Y,Z,U,k,ny,nu,s);
+v3 = computeG(Y,g,ny,s);
+%v3 = (1/h^2) * computeG(Y,g,ny,s); % scaled constraint
 
 v = [v1; v2; v3];
-
 

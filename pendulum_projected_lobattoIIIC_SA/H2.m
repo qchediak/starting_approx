@@ -57,7 +57,8 @@ G_arg = kron(ones(s,1),yn) + h * kron(A,eye(ny))*computeF(Y,Z,f,ny,s);
 % calculate H(x) with above parameters
 v1 = Y - kron(ones(s,1), yn) - h * kron(A, eye(ny)) * computeF(Y,Z,f,ny,s);
 v2 = Z - kron(ones(s,1), zn) - h * kron(Ahat, eye(nz)) * computeK(Y,Z,U,k,ny,nu,s);
-v3 = (1/h) * computeG(G_arg,g,ny,s); % scaled constraint
+v3 = (1/h) * computeG(G_arg,g,ny,s);
+%v3 = (1/h^2) * computeG(Y,g,ny,s); % scaled constraint
 
 v = [v1; v2; v3];
 

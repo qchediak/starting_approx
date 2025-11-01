@@ -29,6 +29,7 @@ function [Ynp0 Znp0 Unp0] = find_SA_DAE(ynm, znm, Yn, Zn, Un, SA_params)
 	% Note params has a cell array structure.
 	%
 	% Currently works with Gauss or Radau IIA, both with s=2.
+	% Also works for Lobatto IIIC (s=3) as long as projection is used.
 
 	% unpack params
 	h = SA_params{1};
@@ -189,7 +190,7 @@ function [Ynp0 Znp0 Unp0] = find_SA_DAE(ynm, znm, Yn, Zn, Un, SA_params)
 
 		D = D_star*E;
 	else
-		error('Error (find_SA): Invalid method and s value combination')
+		error('Error (find_SA_DAE): Invalid method and s value combination')
 	end
 
 	%% compute Ynp0, Znp0, Unp0

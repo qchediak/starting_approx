@@ -13,7 +13,7 @@ function [ynp znp Ynp Znp Unp iter] = solve_PRK_DAE_single_step(params, h, yn, z
 	%
 	% Inputs: 
 	%	params: Cell array consisting of: g0, l, tol, ny, nz, nu,
-	%		method_str, b, c, A, Ahat, f, k, g
+	%		method_str, b, c, A, Ahat, f, k, g, gyf
 	%	h: step size.
 	%	(yn, zn, un): The most recent step.  If desired, un could be taken
 	%		to be U_s.
@@ -46,6 +46,7 @@ function [ynp znp Ynp Znp Unp iter] = solve_PRK_DAE_single_step(params, h, yn, z
 	f = params{12};
 	k = params{13};
 	g = params{14};
+	gyf = params{15};
 
 	s = size(A,1);
 
@@ -75,12 +76,10 @@ function [ynp znp Ynp Znp Unp iter] = solve_PRK_DAE_single_step(params, h, yn, z
 		error('Error (solve_IRK_DAE_single_step): Unknown iterative scheme');
 	end
 
-	% unpack root
-	% for s=2, ny=nz=2, nu=1, Ynp=root(1:4), Znp=root(5:8), Unp=root(9:10)
-	% for s=3, ny=nz=2, nu=1, Ynp=root(1:6), Znp=root(7:12), Unp=root(13:15)
-	Ynp = root(1:ny*s);	
-	Znp = root(ny*s+1:ny*s+nz*s);
-	Unp = root(ny*s+nz*s+1:ny*s+nz*s+nu*s);
+	% unpack H_root
+	Ynp = root(1:ny*s);			% for s=2, ny=nz=2, nu=1, this is 1:4
+	Znp = root(ny*s+1:ny*s+nz*s);	% for s=2, ny=nz=2, nu=1, this is 5:8
+	Unp = root(ny*s+nz*s+1:end);	% for s=2, ny=nz=2, nu=1, this is 9:10
 
 	% Find the update step
 	% Note that this assumes ny=nz

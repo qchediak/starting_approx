@@ -1,5 +1,5 @@
 function J = DH1(x,Hparams)
-% function J = DH1(x,Hparams)
+% function J = DF1(x,Hparams)
 % Jacobian of the function H1.
 %
 % Here x = [Y; Z; U] are the variables being solved for and 
@@ -52,8 +52,7 @@ J21 = -h * kron(Ahat, eye(ny)) * dKdY;
 J22 = eye(ny*s);
 J23 = -h * kron(Ahat, eye(ny)) * dKdU;
 
-%J31 = compute_dGdY(Y,ny,s);
-J31 = dGdY;
+J31 = compute_dGdY(Y,ny,s);
 J32 = zeros(s,ny*s);
 J33 = zeros(s,s);
 

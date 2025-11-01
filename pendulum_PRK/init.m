@@ -4,7 +4,7 @@
 g0 = 9.8; % Graviational constant.
 alpha0 = [0;g0];
 l = 1; % length of rod
-h = 5e-3; % stepsize
+h = 0.1; % stepsize
 tol = 1e-6; % for the iterative solver (e.g. Newton's method)
 N = 500; % number of steps
 
@@ -19,24 +19,37 @@ nu = 1; % dimensions of u
 u0 = dot(z0,z0) - dot(y0,alpha0); % satisfies hidden constraint.  
 
 % PRK coefficients: Uncomment the desired method
-% Note that b is a column vector
 
-%% 3-stage Gauss
-method_str = 'Gauss Method';
-A=[5/36, 2/9-sqrt(15)/15, 5/36-sqrt(15)/30;
-	5/36+sqrt(15)/24, 2/9, 5/36-sqrt(15)/24;
-	5/36+sqrt(15)/30, 2/9+sqrt(15)/15, 5/36];
-b = [5/18; 4/9; 5/18];
-c = [1/2-sqrt(15)/10; 1/2; 1/2+sqrt(15)/10];
-Ahat = A;
-
-%% 2-stage Radau IIA
+%method_str = 'Gauss Method';
 %method_str = 'Radau IIA';
-%A = [5/12 -1/12;
-%	3/4 1/4];
-%b = [3/4; 1/4];
-%c = [1/3; 1];
-%Ahat = A;
+method_str = 'Lobatto IIIC';
+
+if strcmp(method_str, 'Gauss Method')
+	%% 3-stage Gauss
+	A=[5/36, 2/9-sqrt(15)/15, 5/36-sqrt(15)/30;
+		5/36+sqrt(15)/24, 2/9, 5/36-sqrt(15)/24;
+		5/36+sqrt(15)/30, 2/9+sqrt(15)/15, 5/36];
+	b = [5/18; 4/9; 5/18];
+	c = [1/2-sqrt(15)/10; 1/2; 1/2+sqrt(15)/10];
+	Ahat = A;
+elseif strcmp(method_str, 'Radau IIA')
+	% 2-stage Radau IIA
+	A = [5/12 -1/12;
+		3/4 1/4];
+	b = [3/4; 1/4];
+	c = [1/3; 1];
+	Ahat = A;
+elseif strcmp(method_str, 'Lobatto IIIC')
+	%% 3-stage Lobatto IIIC
+	A = [1/6 -1/3 1/6;
+		1/6 5/12 -1/12;
+		1/6 2/3 1/6];
+	b = [1/6; 2/3; 1/6];
+	c = [0; 1/2; 1];
+	Ahat = A;
+else
+	fprintf('Error (init): method_str is not an available method.\nChoose one of Gauss Method, Radau IIA, or Lobatto IIIC.')
+end
 
 s = size(A,1); % number of stages
 
